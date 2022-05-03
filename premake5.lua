@@ -22,9 +22,6 @@ project "muscle"
 		"./system/*.h",
 		"./util/*.cpp",
 		"./util/*.h",
-		"./zlib/*.cpp",
-		"./zlib/*.h",
-		"./zlib/zlib/contrib/minizip/*.c",
 	}
 
 	includedirs {
@@ -39,12 +36,10 @@ project "muscle"
 
 	filter "system:windows"
 		excludes {
-			"./dataio/*SSL*"
+			"./dataio/*SSL*",
 		}	
 
 		files {
-			"./zlib/zlib/*.c",
-			"./zlib/zlib/*.h",
 			"./regex/regex/regcomp.c",
 			"./regex/regex/regcomp.h",
 			"./regex/regex/regerror.c",
@@ -56,6 +51,5 @@ project "muscle"
 		}
 
 		includedirs {
-			"./zlib/zlib",
 			"./regex/regex",
 		}
