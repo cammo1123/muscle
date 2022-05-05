@@ -27,6 +27,11 @@ project "muscle"
 	includedirs {
 		"./"
 	}
+
+	excludes {
+		"**SSL*",
+		"dataio/SSL*",
+	}	
 	
 	filter "configurations:Debug"
 		symbols "On"
@@ -35,10 +40,6 @@ project "muscle"
 		optimize "On"
 
 	filter "system:windows"
-		excludes {
-			"./dataio/*SSL*",
-		}	
-
 		files {
 			"./regex/regex/regcomp.c",
 			"./regex/regex/regcomp.h",
